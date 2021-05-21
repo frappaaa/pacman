@@ -1,3 +1,18 @@
 body {
-  margin: 0;
+  margin: 10px;
+  padding: 10px;
+  main {
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      width: 420px;
+      height: 420px;
+      border: solid 1px #000;
+      div {
+        width: 15px;
+        height: 15px;
+        background-color: blue;
+      }
+    }
+  }
 }
