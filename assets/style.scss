@@ -1,7 +1,13 @@
 body {
   margin: 10px;
   padding: 10px;
+  font-family: sans-serif;
+  header {
+    text-align: center;
+  }
   main {
+    display: grid;
+    place-content: center;
     .grid {
       display: flex;
       flex-wrap: wrap;
@@ -12,6 +18,22 @@ body {
         width: 15px;
         height: 15px;
         background-color: blue;
+        .pac-dot {
+          background-color: green;
+          border: 5px solid #fff;
+          box-sizing: border-box;
+        }
+        .wall {
+          background-color: blue;
+        }
+        .power-pellet {
+          background-color: green;
+          border-radius: 7.5px;
+        }
+        .pacman {
+          background-color: yellow;
+          border-radius: 7.5px;
+        }
       }
     }
   }
