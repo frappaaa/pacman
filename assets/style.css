@@ -52,4 +52,24 @@ body main .grid div.pacman {
   border-radius: 7.5px;
   border: none;
 }
+
+body main .grid div.blinky {
+  background-color: red;
+  border: none;
+}
+
+body main .grid div.pinky {
+  background-color: pink;
+  border: none;
+}
+
+body main .grid div.inky {
+  background-color: blue;
+  border: none;
+}
+
+body main .grid div.clyde {
+  background-color: orange;
+  border: none;
+}
 /*# sourceMappingURL=style.css.map */
