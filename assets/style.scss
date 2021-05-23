@@ -18,21 +18,22 @@ body {
         width: 15px;
         height: 15px;
         background-color: blue;
-        .pac-dot {
+        &.pac-dot {
           background-color: green;
           border: 5px solid #fff;
           box-sizing: border-box;
         }
-        .wall {
+        &.wall {
           background-color: blue;
         }
-        .power-pellet {
+        &.power-pellet {
           background-color: green;
           border-radius: 7.5px;
         }
-        .pacman {
-          background-color: yellow;
+        &.pacman {
+          background-color: orange;
           border-radius: 7.5px;
+          border: none;
         }
       }
     }

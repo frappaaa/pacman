@@ -1,13 +1,10 @@
 const width = 28;
 const grid = document.querySelector("main div.grid");
 const score = document.querySelector("#score");
+let pacManIndex = 400;
+let squares = [];
 
 //28 * 28 = 784
-// 0 - pac-dots
-// 1 - wall
-// 2 - ghost-lair
-// 3 - power-pellet
-// 4 - empty
 
 const layout = [
   1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -43,4 +40,52 @@ const layout = [
   1, 1, 1, 1,
 ];
 
-for (let i = 0; i < layout.length; i++) {}
+for (let i = 0; i < layout.length; i++) {
+  let box = document.createElement("div");
+  switch (layout[i]) {
+    // 0 - pac-dots
+    // 1 - wall
+    // 2 - ghost-lair
+    // 3 - power-pellet
+    // 4 - empty
+    case 0:
+      box.classList.add("pac-dot");
+      break;
+    case 1:
+      box.classList.add("wall");
+      break;
+    case 2:
+      box.classList.add("ghost-lair");
+      break;
+    case 3:
+      box.classList.add("power-pellet");
+      break;
+    default:
+      break;
+  }
+  squares.push(box);
+  grid.appendChild(box);
+}
+
+//Connect keys to actions
+function control(e) {
+  switch (e.keyCode) {
+    case 40:
+      console.log("pressed down");
+      break;
+    case 38:
+      console.log("pressed up");
+      break;
+    case 37:
+      console.log("pressed left");
+      break;
+    case 39:
+      console.log("pressed right");
+      break;
+    default:
+      break;
+  }
+}
+document.addEventListener("keyup", control);
+
+squares[pacManIndex].classList.add("pacman");

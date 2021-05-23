@@ -31,24 +31,25 @@ body main .grid div {
   background-color: blue;
 }
 
-body main .grid div .pac-dot {
+body main .grid div.pac-dot {
   background-color: green;
   border: 5px solid #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-body main .grid div .wall {
+body main .grid div.wall {
   background-color: blue;
 }
 
-body main .grid div .power-pellet {
+body main .grid div.power-pellet {
   background-color: green;
   border-radius: 7.5px;
 }
 
-body main .grid div .pacman {
-  background-color: yellow;
+body main .grid div.pacman {
+  background-color: orange;
   border-radius: 7.5px;
+  border: none;
 }
 /*# sourceMappingURL=style.css.map */
