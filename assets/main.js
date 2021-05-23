@@ -114,7 +114,7 @@ function control(e) {
       break;
   }
   squares[pacManIndex].classList.add("pacman");
-  pacDotEaten;
+  pacDotEaten();
 }
 document.addEventListener("keyup", control);
 
@@ -125,5 +125,6 @@ function pacDotEaten() {
     score++;
     squares[pacManIndex].classList.remove("pac-dot");
   }
-  scoreText.textContent = score;
+  // @ts-ignore
+  scoreText.innerHTML = score;
 }
