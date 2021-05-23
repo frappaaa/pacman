@@ -54,9 +54,9 @@ for (let i = 0; i < layout.length; i++) {
     case 1:
       box.classList.add("wall");
       break;
-    case 2:
-      box.classList.add("ghost-lair");
-      break;
+    // case 2:
+    //   box.classList.add("ghost-lair");
+    //   break;
     case 3:
       box.classList.add("power-pellet");
       break;
@@ -72,16 +72,32 @@ function control(e) {
   squares[pacManIndex].classList.remove("pacman");
   switch (e.keyCode) {
     case 40:
-      if (pacManIndex + width < width * width) pacManIndex += width;
+      if (
+        !squares[pacManIndex + width].classList.contains("wall") &&
+        pacManIndex + width < width * width
+      )
+        pacManIndex += width;
       break;
     case 38:
-      if (pacManIndex + width >= 0) pacManIndex -= width;
+      if (
+        !squares[pacManIndex - width].classList.contains("wall") &&
+        pacManIndex + width >= 0
+      )
+        pacManIndex -= width;
       break;
     case 37:
-      if (pacManIndex % width !== 0) pacManIndex -= 1;
+      if (
+        !squares[pacManIndex - 1].classList.contains("wall") &&
+        pacManIndex % width !== 0
+      )
+        pacManIndex -= 1;
       break;
     case 39:
-      if (pacManIndex % width < width - 1) pacManIndex += 1;
+      if (
+        !squares[pacManIndex + 1].classList.contains("wall") &&
+        pacManIndex % width < width - 1
+      )
+        pacManIndex += 1;
       break;
     default:
       break;
