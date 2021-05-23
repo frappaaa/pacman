@@ -1,7 +1,7 @@
 const width = 28;
 const grid = document.querySelector("main div.grid");
 const score = document.querySelector("#score");
-let pacManIndex = 400;
+let pacManIndex = 500;
 let squares = [];
 
 //28 * 28 = 784
@@ -69,22 +69,24 @@ for (let i = 0; i < layout.length; i++) {
 
 //Connect keys to actions
 function control(e) {
+  squares[pacManIndex].classList.remove("pacman");
   switch (e.keyCode) {
     case 40:
-      console.log("pressed down");
+      if (pacManIndex + width < width * width) pacManIndex += width;
       break;
     case 38:
-      console.log("pressed up");
+      if (pacManIndex + width >= 0) pacManIndex -= width;
       break;
     case 37:
-      console.log("pressed left");
+      if (pacManIndex % width !== 0) pacManIndex -= 1;
       break;
     case 39:
-      console.log("pressed right");
+      if (pacManIndex % width < width - 1) pacManIndex += 1;
       break;
     default:
       break;
   }
+  squares[pacManIndex].classList.add("pacman");
 }
 document.addEventListener("keyup", control);
 
