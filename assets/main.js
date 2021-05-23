@@ -94,6 +94,9 @@ function control(e) {
         pacManIndex % width !== 0
       )
         pacManIndex -= 1;
+      if (pacManIndex === 364) {
+        pacManIndex = 391;
+      }
       break;
     case 39:
       if (
@@ -102,6 +105,9 @@ function control(e) {
         pacManIndex % width < width - 1
       )
         pacManIndex += 1;
+      if (pacManIndex === 391) {
+        pacManIndex = 364;
+      }
       break;
     default:
       break;

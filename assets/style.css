@@ -29,7 +29,6 @@ body main .grid {
 body main .grid div {
   width: 15px;
   height: 15px;
-  background-color: blue;
 }
 
 body main .grid div.pac-dot {
