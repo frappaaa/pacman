@@ -1,6 +1,7 @@
 const grid = document.querySelector("main div.grid");
 const width = 28;
-const score = document.querySelector("#score");
+const scoreText = document.querySelector("#score");
+let score = 0;
 let pacManIndex = 500;
 let squares = [];
 
@@ -113,7 +114,16 @@ function control(e) {
       break;
   }
   squares[pacManIndex].classList.add("pacman");
+  pacDotEaten;
 }
 document.addEventListener("keyup", control);
 
 squares[pacManIndex].classList.add("pacman");
+
+function pacDotEaten() {
+  if (squares[pacManIndex].classList.contains("pac-dot")) {
+    score++;
+    squares[pacManIndex].classList.remove("pac-dot");
+  }
+  scoreText.textContent = score;
+}
