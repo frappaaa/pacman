@@ -1,5 +1,5 @@
-const width = 28;
 const grid = document.querySelector("main div.grid");
+const width = 28;
 const score = document.querySelector("#score");
 let pacManIndex = 500;
 let squares = [];
@@ -54,9 +54,9 @@ for (let i = 0; i < layout.length; i++) {
     case 1:
       box.classList.add("wall");
       break;
-    // case 2:
-    //   box.classList.add("ghost-lair");
-    //   break;
+    case 2:
+      box.classList.add("ghost-lair");
+      break;
     case 3:
       box.classList.add("power-pellet");
       break;
@@ -73,6 +73,7 @@ function control(e) {
   switch (e.keyCode) {
     case 40:
       if (
+        !squares[pacManIndex + width].classList.contains("ghost-lair") &&
         !squares[pacManIndex + width].classList.contains("wall") &&
         pacManIndex + width < width * width
       )
@@ -80,6 +81,7 @@ function control(e) {
       break;
     case 38:
       if (
+        !squares[pacManIndex - width].classList.contains("ghost-lair") &&
         !squares[pacManIndex - width].classList.contains("wall") &&
         pacManIndex + width >= 0
       )
@@ -87,6 +89,7 @@ function control(e) {
       break;
     case 37:
       if (
+        !squares[pacManIndex - 1].classList.contains("ghost-lair") &&
         !squares[pacManIndex - 1].classList.contains("wall") &&
         pacManIndex % width !== 0
       )
@@ -94,6 +97,7 @@ function control(e) {
       break;
     case 39:
       if (
+        !squares[pacManIndex + 1].classList.contains("ghost-lair") &&
         !squares[pacManIndex + 1].classList.contains("wall") &&
         pacManIndex % width < width - 1
       )
