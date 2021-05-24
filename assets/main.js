@@ -133,6 +133,8 @@ function pacDotEaten() {
 function powerPelletEaten() {
   //if square pacman is in contains a power pellet
   if (squares[pacManIndex].classList.contains("power-pellet")) {
+    //removing class of power-pellet from square
+    squares[pacManIndex].classList.remove("power-pellet");
     //add a score of 10
     score += 10;
     //change each of the four ghosts to isScared
@@ -195,5 +197,10 @@ function moveGhost(ghost) {
       squares[ghost.currentIndex].classList.add(ghost.className);
       squares[ghost.currentIndex].classList.add("ghost");
     } else direction = directions[Math.floor(Math.random() * directions.length)];
+
+    //if the ghost is currently scared
+    if (ghost.isScared) {
+      squares[ghost.currentIndex].classList.add("scared-ghost");
+    }
   }, ghost.speed);
 }
