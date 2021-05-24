@@ -81,7 +81,6 @@ function control(e) {
   squares[pacmanCurrentIndex].classList.remove("pacman");
   switch (e.keyCode) {
     case 40:
-      console.log("pressed down");
       if (
         !squares[pacmanCurrentIndex + width].classList.contains("ghost-lair") &&
         !squares[pacmanCurrentIndex + width].classList.contains("wall") &&
@@ -90,7 +89,6 @@ function control(e) {
         pacmanCurrentIndex += width;
       break;
     case 38:
-      console.log("pressed up");
       if (
         !squares[pacmanCurrentIndex - width].classList.contains("ghost-lair") &&
         !squares[pacmanCurrentIndex - width].classList.contains("wall") &&
@@ -99,7 +97,6 @@ function control(e) {
         pacmanCurrentIndex -= width;
       break;
     case 37:
-      console.log("pressed left");
       if (
         !squares[pacmanCurrentIndex - 1].classList.contains("ghost-lair") &&
         !squares[pacmanCurrentIndex - 1].classList.contains("wall") &&
@@ -111,7 +108,6 @@ function control(e) {
       }
       break;
     case 39:
-      console.log("pressed right");
       if (
         !squares[pacmanCurrentIndex + 1].classList.contains("ghost-lair") &&
         !squares[pacmanCurrentIndex + 1].classList.contains("wall") &&
@@ -135,6 +131,7 @@ function pacDotEaten() {
   if (squares[pacmanCurrentIndex].classList.contains("pac-dot")) {
     squares[pacmanCurrentIndex].classList.remove("pac-dot");
     score++;
+    // @ts-ignore
     scoreDisplay.innerHTML = score;
   }
 }
@@ -185,10 +182,8 @@ ghosts.forEach((ghost) => {
 ghosts.forEach((ghost) => moveGhost(ghost));
 
 function moveGhost(ghost) {
-  console.log("moved ghost");
   const directions = [-1, +1, -width, +width];
   let direction = directions[Math.floor(Math.random() * directions.length)];
-  console.log(direction);
 
   ghost.timerId = setInterval(function () {
     //all our code
